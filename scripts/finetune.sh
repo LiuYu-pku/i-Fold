@@ -1,0 +1,15 @@
+python3 train_ifold.py /home2/liuyu/ifold_trainset/pdb_data/mmcif_files /home2/liuyu/ifold_trainset/alignment_data/alignment_dbs /home2/liuyu/ifold_trainset/pdb_data/mmcif_files /home2/liuyu/ifold_models \
+    --max_template_date 2021-10-10 \
+    --train_chain_data_cache_path /home2/liuyu/ifold_trainset/pdb_data/data_caches/chain_data_cache.json \
+    --template_release_dates_cache_path /home2/liuyu/ifold_trainset/pdb_data/data_caches/mmcif_cache.json \
+	--config_preset finetuning \
+	--alignment_index_path /home2/liuyu/ifold_trainset/alignment_data/alignment_dbs/alignment_db.index \
+    --seed 42 \
+    --obsolete_pdbs_file_path /home2/liuyu/ifold_trainset/pdb_data/obsolete.dat \
+    --num_nodes 1 \
+    --gpus 4 \
+	--resume_from_ckpt /home2/liuyu/ifold_models/epoch9step12500.ckpt \
+	--resume_model_weights_only True \
+    --log_performance True \
+    --wandb \
+    --experiment_name Openfold_finetuning1
